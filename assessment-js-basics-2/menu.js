@@ -159,13 +159,8 @@ const foodArr = [
 */
 
 //CODE HERE
-function hasTag(food) {
-    if (foodArr.tags.includes(food)) {
-        return foodArr.tags;
-    }
-}
-
-const filteredFood = foodArr.filter(hasTag('Appetizers'))
+const filteredFood = foodArr.filter(element => element.tags.includes(`Foods`))
+console.log(filteredFood)
 
 
 
@@ -209,6 +204,20 @@ const filteredFood = foodArr.filter(hasTag('Appetizers'))
 */
 
 //CODE HERE
+function filterByProperty(prop, num, type) {
+    let filteredFood = []
+    foodArr.filter(element => {
+        if (type === `above`) {
+            if(element.prop > num) {
+                filteredFood.push(element)
+            }
+        } else if (type === `below`) {
+            if (element.prop < num) {
+                filteredFood.push(element)
+            }
+        }
+    })
+}
 
 
 /*
@@ -219,3 +228,4 @@ const filteredFood = foodArr.filter(hasTag('Appetizers'))
 */
 
 //CODE HERE
+console.log(filterByProperty(`popularity`, 7, `below`));

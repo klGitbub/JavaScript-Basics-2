@@ -36,6 +36,8 @@ const cart = [
 //CODE HERE
 
 // const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0)
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,6 +56,8 @@ const cart = [
 */
 
 //CODE HERE
+const calcFinalPrice = (cartTotal, couponValue, tax) => (cartTotal * tax) + cartTotal - couponValue
+console.log(calcFinalPrice(24.95, 5, 0,07))
 
 
 
@@ -79,6 +83,11 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    name - string - every order needs a name
+    email - string - contact purposes, order confirmation and/or updates through email
+    phone - number contact purposes, order confirmaiton and/or updates through phone
+    address - string - delivery purposes
+    birthday month - string - discount on an order in birthday month
 
 */
 
@@ -88,3 +97,10 @@ const cart = [
 */
 
 //CODE HERE
+const customer = {
+    name: 'Tara King',
+    email: 'taraking@yahoo.com',
+    phone: 8955552532,
+    address: '732 W 4867 S Dover, DW 87385',
+    birthdayMonth: 'December'
+}
